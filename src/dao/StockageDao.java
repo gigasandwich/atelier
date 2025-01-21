@@ -12,7 +12,7 @@ public class StockageDao {
             ps.setInt(1, idOrdinateur);
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
-                    return new Stockage(rs.getInt("id_stockage"), rs.getInt("quantite_stockage"), rs.getString("type_stockage"));
+                    return new Stockage(rs.getInt("id_stockage"), rs.getString("type_stockage"));
                 }
             }
         } catch (SQLException e) {

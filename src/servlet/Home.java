@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
  *
  * @author LENOVO
  */
-@WebServlet(name = "Home", urlPatterns = { "/" })
+@WebServlet(name = "Accueil", urlPatterns = { "/" })
 public class Home extends HttpServlet {
 
     /**

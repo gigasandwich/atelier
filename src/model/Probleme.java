@@ -1,4 +1,4 @@
-package model; 
+package model;
 
 public class Probleme {
     private int idProbleme;
@@ -11,9 +11,6 @@ public class Probleme {
         this.categorieProbleme = categorieProbleme;
     }
 
-    /*
-     * Getters
-     */
     public int getIdProbleme() {
         return idProbleme;
     }

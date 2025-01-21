@@ -1,9 +1,9 @@
-package model; 
+package model;
 
 public class Technicien {
-    int idTechnicien;
-    String nomTechnicien;
-    String numeroEmploye;
+    private int idTechnicien;
+    private String nomTechnicien;
+    private String numeroEmploye;
 
     public Technicien(int idTechnicien, String nomTechnicien, String numeroEmploye) {
         this.idTechnicien = idTechnicien;
@@ -11,9 +11,6 @@ public class Technicien {
         this.numeroEmploye = numeroEmploye;
     }
 
-    /*
-     * Getters
-     */
     public int getIdTechnicien() {
         return idTechnicien;
     }
