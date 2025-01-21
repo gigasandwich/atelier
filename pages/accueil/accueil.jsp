@@ -1,4 +1,3 @@
-<%@page contentType="text/html" pageEncoding="UTF-8" %>
 
 <!DOCTYPE html>
 <html class="loading" lang="fr" data-textdirection="ltr">
@@ -8,20 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <title>MADA FIX</title>
     <link rel="apple-touch-icon" href="#">
-    <link rel="shortcut icon" type="image/x-icon" href="../../../theme-assets/images/icon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/theme-assets/images/icon.ico">
     <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700" rel="stylesheet">
     <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
     <!-- BEGIN VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="../../../theme-assets/css/vendors.css">
-    <link rel="stylesheet" type="text/css" href="../../../theme-assets/vendors/css/charts/chartist.css">
+    <link rel="stylesheet" type="text/css" href="assets/theme-assets/css/vendors.css">
+    <link rel="stylesheet" type="text/css" href="assets/theme-assets/vendors/css/charts/chartist.css">
     <!-- END VENDOR CSS-->
     <!-- BEGIN CHAMELEON  CSS-->
-    <link rel="stylesheet" type="text/css" href="../../../theme-assets/css/app-lite.css">
+    <link rel="stylesheet" type="text/css" href="assets/theme-assets/css/app-lite.css">
     <!-- END CHAMELEON  CSS-->
     <!-- BEGIN Page Level CSS-->
-    <link rel="stylesheet" type="text/css" href="../../../theme-assets/css/core/menu/menu-types/vertical-menu.css">
-    <link rel="stylesheet" type="text/css" href="../../../theme-assets/css/core/colors/palette-gradient.css">
-    <link rel="stylesheet" type="text/css" href="../../../theme-assets/css/pages/dashboard-ecommerce.css">
+    <link rel="stylesheet" type="text/css" href="assets/theme-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="assets/theme-assets/css/core/colors/palette-gradient.css">
+    <link rel="stylesheet" type="text/css" href="assets/theme-assets/css/pages/dashboard-ecommerce.css">
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
     <!-- END Custom CSS-->
@@ -85,7 +84,7 @@
     <div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true" data-img="theme-assets/images/backgrounds/02.jpg">
       <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">       
-          <li class="nav-item mr-auto"><a class="navbar-brand" href="accueil"><img class="brand-logo" alt="" src="theme-assets/images/logo.jpg"/>
+          <li class="nav-item mr-auto"><a class="navbar-brand" href="home"><img class="brand-logo" alt="" src="theme-assets/images/logo.jpg"/>
               <h3 class="brand-text">MADA FIX</h3></a></li>
           <li class="nav-item d-md-none"><a class="nav-link close-navbar"><i class="ft-x"></i></a></li>
         </ul>
@@ -95,9 +94,9 @@
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
           
           <li class="active">
-            <a href="accueil">
+            <a href="home">
               <i class="ft-home"></i>
-              <span class="menu-title" data-i18n="">Accueil</span>
+              <span class="menu-title" data-i18n="">Dashboard</span>
             </a>
           </li>
 
@@ -146,6 +145,9 @@
                   <li>
                     <a href="insertion-ram" class="menu-item">Insertion</a>
                   </li>
+                  <li>
+                    <a href="liste-ram" class="menu-item">Liste</a>
+                  </li>
                 </ul>
               </li>
               <li class="has-sub">
@@ -166,7 +168,7 @@
                     <a href="insertion-type-ordinateur" class="menu-item">Insertion</a>
                   </li>
                   <li>
-                    <a href="Liste-type-ordinateur" class="menu-item">Liste</a>
+                    <a href="liste-type-ordinateur" class="menu-item">Liste</a>
                   </li>
                 </ul>
               </li>
@@ -198,7 +200,7 @@
                     <a href="insertion-client" class="menu-item">Insertion</a>
                 </li>
                 <li>
-                  <a href="liste-client" class="menu-item">Recherche</a>
+                  <a href="liste-client" class="menu-item">Liste</a>
               </li>
             </ul>
           </li>
@@ -213,7 +215,7 @@
                     <a href="insertion-probleme" class="menu-item">Insertion</a>
                 </li>
                 <li>
-                  <a href="liste-probleme" class="menu-item">Recherche</a>
+                  <a href="liste-probleme" class="menu-item">Liste</a>
               </li>
             </ul>
           </li>
@@ -243,7 +245,7 @@
                     <a href="insertion-technicien" class="menu-item">Insertion</a>
                 </li>
                 <li>
-                  <a href="liste-technicien" class="menu-item">Recherche</a>
+                  <a href="liste-technicien" class="menu-item">Liste</a>
               </li>
             </ul>
           </li>
@@ -268,17 +270,17 @@
     </footer>
 
     <!-- BEGIN VENDOR JS-->
-    <script src="../../../theme-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
+    <script src="assets/theme-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
     <!-- BEGIN VENDOR JS-->
     <!-- BEGIN PAGE VENDOR JS-->
-    <script src="../../../theme-assets/vendors/js/charts/chartist.min.js" type="text/javascript"></script>
+    <script src="assets/theme-assets/vendors/js/charts/chartist.min.js" type="text/javascript"></script>
     <!-- END PAGE VENDOR JS-->
     <!-- BEGIN CHAMELEON  JS-->
-    <script src="../../../theme-assets/js/core/app-menu-lite.js" type="text/javascript"></script>
-    <script src="../../../theme-assets/js/core/app-lite.js" type="text/javascript"></script>
+    <script src="assets/theme-assets/js/core/app-menu-lite.js" type="text/javascript"></script>
+    <script src="assets/theme-assets/js/core/app-lite.js" type="text/javascript"></script>
     <!-- END CHAMELEON  JS-->
     <!-- BEGIN PAGE LEVEL JS-->
-    <script src="../../../theme-assets/js/scripts/pages/dashboard-lite.js" type="text/javascript"></script>
+    <script src="assets/theme-assets/js/scripts/pages/dashboard-lite.js" type="text/javascript"></script>
     <!-- END PAGE LEVEL JS-->
   </body>
 </html>

@@ -11,8 +11,8 @@ import jakarta.servlet.http.HttpServletResponse;
  *
  * @author LENOVO
  */
-@WebServlet(name = "AccueilServlet", urlPatterns = { "/" })
-public class AccueilServlet extends HttpServlet {
+@WebServlet(name = "Home", urlPatterns = { "/" })
+public class Home extends HttpServlet {
 
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -23,8 +23,7 @@ public class AccueilServlet extends HttpServlet {
      * @throws IOException      if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Redirection directe vers la JSP
         request.getRequestDispatcher("/pages/accueil/accueil.jsp").forward(request, response);
     }
@@ -36,7 +35,7 @@ public class AccueilServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Servlet for forwarding to insertion-marque.jsp";
+        return "Servlet for forwarding to accueil.jsp";
     }
 
     @Override

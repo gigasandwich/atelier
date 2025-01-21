@@ -34,19 +34,18 @@ if not exist "%PROJECT_DIR%" (
 @REM Create temporary directory for building WAR
 if exist %TEMP_DIR% rmdir /s /q %TEMP_DIR%
 mkdir %TEMP_DIR%
+mkdir %TEMP_DIR%\pages
 mkdir %TEMP_DIR%\WEB-INF
 mkdir %TEMP_DIR%\WEB-INF\classes
 mkdir %TEMP_DIR%\WEB-INF\lib
-mkdir %TEMP_DIR%\pages
 
 echo.
 @REM Copy necessary files
 echo Copying files...
-copy "%PROJECT_DIR%\index.jsp" "%TEMP_DIR%" /y >nul
-xcopy "%PROJECT_DIR%\lib" "%TEMP_DIR%\WEB-INF\lib%" /y >nul
+xcopy "%PROJECT_DIR%\pages" "%TEMP_DIR%\pages" /E /I /Y >nul
 xcopy "%PROJECT_DIR%\assets" "%TEMP_DIR%\assets" /E /I /Y >nul
-xcopy "%PROJECT_DIR%\pages" "%TEMP_DIR%\pages" /y >nul
-xcopy "%PROJECT_DIR%\conf" "%TEMP_DIR%\WEB-INF" /y >nul
+xcopy "%PROJECT_DIR%\conf" "%TEMP_DIR%\WEB-INF" /E /I /Y >nul
+xcopy "%PROJECT_DIR%\lib" "%TEMP_DIR%\WEB-INF\lib%" /E /I /Y >nul
 
 echo.
 @REM Compile all .java files in src\main\java (including subdirectories)
