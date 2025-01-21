@@ -1,8 +1,9 @@
-DROP DATABASE IF EXISTS atelier;
+DROP DATABASE IF EXISTS atelier_reparation;
 
 CREATE USER reparation WITH PASSWORD 'reparation' CREATEDB;
 CREATE DATABASE atelier_reparation OWNER reparation;
 GRANT ALL PRIVILEGES ON DATABASE atelier_reparation TO reparation;
+
 \c atelier_reparation;
 
 DROP TABLE IF EXISTS marque;
@@ -20,6 +21,19 @@ DROP TABLE IF EXISTS reparation;
 DROP TABLE IF EXISTS ordinateur_stockage;
 DROP TABLE IF EXISTS ordinateur_probleme;
 
+CREATE TABLE marque(
+   id_marque SERIAL,
+   nom_marque VARCHAR(10)  NOT NULL,
+   PRIMARY KEY(id_marque)
+);
+
+CREATE TABLE modele(
+   id_modele SERIAL,
+   nom_modele VARCHAR(50)  NOT NULL,
+   id_marque INTEGER NOT NULL,
+   PRIMARY KEY(id_modele),
+   FOREIGN KEY(id_marque) REFERENCES marque(id_marque)
+);
 CREATE TABLE marque(
    id_marque SERIAL,
    nom_marque VARCHAR(10)  NOT NULL,

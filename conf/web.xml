@@ -1,0 +1,72 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" 
+         version="3.1">
+    <servlet>
+        <servlet-name>Tongasoa</servlet-name>
+        <servlet-class>servlet.Tongasoa</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Tongasoa</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <!-- CLIIENTS -->
+    <servlet>
+        <servlet-name>ListClientServlet</servlet-name>
+        <servlet-class>servlet.client.ListClientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListClientServlet</servlet-name>
+        <url-pattern>/liste-client</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>InsertClientServlet</servlet-name>
+        <servlet-class>servlet.client.InsertClientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InsertClientServlet</servlet-name>
+        <url-pattern>/insertion-client</url-pattern>
+    </servlet-mapping>
+
+    <!-- TECHNICIENS -->
+    <servlet>
+        <servlet-name>ListTechnicienServlet</servlet-name>
+        <servlet-class>servlet.technicien.ListTechnicienServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListTechnicienServlet</servlet-name>
+        <url-pattern>/liste-technicien</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>InsertTechnicienServlet</servlet-name>
+        <servlet-class>servlet.technicien.InsertTechnicienServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InsertTechnicienServlet</servlet-name>
+        <url-pattern>/insertion-technicien</url-pattern>
+    </servlet-mapping>
+
+    <!-- REPARATIONS -->
+    <servlet>
+        <servlet-name>ListReparationServlet</servlet-name>
+        <servlet-class>servlet.reparation.ListReparationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListReparationServlet</servlet-name>
+        <url-pattern>/liste-reparation</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>InsertReparationServlet</servlet-name>
+        <servlet-class>servlet.reparation.InsertReparationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InsertReparationServlet</servlet-name>
+        <url-pattern>/insertion-reparation</url-pattern>
+    </servlet-mapping>
+
+</web-app>

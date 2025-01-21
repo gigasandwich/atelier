@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 
 <!DOCTYPE html>
 <html class="loading" lang="fr" data-textdirection="ltr">
@@ -7,20 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <title>MADA FIX</title>
     <link rel="apple-touch-icon" href="#">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/theme-assets/images/icon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../assets/theme-assets/images/icon.ico">
     <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700" rel="stylesheet">
     <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
     <!-- BEGIN VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="assets/theme-assets/css/vendors.css">
-    <link rel="stylesheet" type="text/css" href="assets/theme-assets/vendors/css/charts/chartist.css">
+    <link rel="stylesheet" type="text/css" href="../../../assets/theme-assets/css/vendors.css">
+    <link rel="stylesheet" type="text/css" href="../../../assets/theme-assets/vendors/css/charts/chartist.css">
     <!-- END VENDOR CSS-->
     <!-- BEGIN CHAMELEON  CSS-->
-    <link rel="stylesheet" type="text/css" href="assets/theme-assets/css/app-lite.css">
+    <link rel="stylesheet" type="text/css" href="../../../assets/theme-assets/css/app-lite.css">
     <!-- END CHAMELEON  CSS-->
     <!-- BEGIN Page Level CSS-->
-    <link rel="stylesheet" type="text/css" href="assets/theme-assets/css/core/menu/menu-types/vertical-menu.css">
-    <link rel="stylesheet" type="text/css" href="assets/theme-assets/css/core/colors/palette-gradient.css">
-    <link rel="stylesheet" type="text/css" href="assets/theme-assets/css/pages/dashboard-ecommerce.css">
+    <link rel="stylesheet" type="text/css" href="../../../assets/theme-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="../../../assets/theme-assets/css/core/colors/palette-gradient.css">
+    <link rel="stylesheet" type="text/css" href="../../../assets/theme-assets/css/pages/dashboard-ecommerce.css">
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
     <!-- END Custom CSS-->
@@ -258,7 +259,7 @@
     <!-- ////////////////////////////////////////////////////////////////////////////-->
     <div class="app-content content">
       <div class="content-wrapper">
-        
+          <jsp:include page="${pageName}" />
       </div>
     </div>
     <!-- ////////////////////////////////////////////////////////////////////////////-->
@@ -270,17 +271,17 @@
     </footer>
 
     <!-- BEGIN VENDOR JS-->
-    <script src="assets/theme-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
+    <script src="../../../assets/theme-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
     <!-- BEGIN VENDOR JS-->
     <!-- BEGIN PAGE VENDOR JS-->
-    <script src="assets/theme-assets/vendors/js/charts/chartist.min.js" type="text/javascript"></script>
+    <script src="../../../assets/theme-assets/vendors/js/charts/chartist.min.js" type="text/javascript"></script>
     <!-- END PAGE VENDOR JS-->
     <!-- BEGIN CHAMELEON  JS-->
-    <script src="assets/theme-assets/js/core/app-menu-lite.js" type="text/javascript"></script>
-    <script src="assets/theme-assets/js/core/app-lite.js" type="text/javascript"></script>
+    <script src="../../../assets/theme-assets/js/core/app-menu-lite.js" type="text/javascript"></script>
+    <script src="../../../assets/theme-assets/js/core/app-lite.js" type="text/javascript"></script>
     <!-- END CHAMELEON  JS-->
     <!-- BEGIN PAGE LEVEL JS-->
-    <script src="assets/theme-assets/js/scripts/pages/dashboard-lite.js" type="text/javascript"></script>
+    <script src="../../../assets/theme-assets/js/scripts/pages/dashboard-lite.js" type="text/javascript"></script>
     <!-- END PAGE LEVEL JS-->
   </body>
 </html>
