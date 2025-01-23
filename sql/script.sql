@@ -91,6 +91,7 @@ CREATE TABLE technicien(
    id_technicien SERIAL,
    nom_technicien VARCHAR(50)  NOT NULL,
    numero_employe VARCHAR(50)  NOT NULL,
+   -- sexe VARCHAR(50),
    PRIMARY KEY(id_technicien),
    UNIQUE(numero_employe)
 );

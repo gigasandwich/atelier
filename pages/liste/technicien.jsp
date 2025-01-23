@@ -1,5 +1,5 @@
 <%@ page import="java.util.List" %>
-<%@ page import="model.Client" %>
+<%@ page import="model.*" %>
 <%@ page import="dao.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 

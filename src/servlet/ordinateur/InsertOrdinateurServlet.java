@@ -1,4 +1,4 @@
-package servlet.client;
+package servlet.technicien;
 import dao.*;
 import model.*;
 
@@ -9,25 +9,26 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "InsertClient", urlPatterns = { "/insertion-client" })
-public class InsertClientServlet extends HttpServlet {
+@WebServlet(name = "InsertionOrdinateur", urlPatterns = { "/insertion-ordinateur" })
+public class InsertOrdinateurServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("pageName", "/pages/insertion/client.jsp");
+        request.setAttribute("pageName", "/pages/insertion/technicien.jsp");
         request.getRequestDispatcher("/pages/accueil/accueil.jsp").forward(request, response);
     }
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String nomClient = request.getParameter("nomClient");
-        String prenomClient = request.getParameter("prenomClient");
-        String contact = request.getParameter("contact");
+        // Get form data
+        String nomTechnicien = request.getParameter("nom_technicien");
+        String numeroEmploye = request.getParameter("numero_employe");
 
-        Client client = new Client(0, nomClient, prenomClient, contact);
+        Technicien technicien = new Technicien(0, nomTechnicien, numeroEmploye);
 
-        ClientDao clientDao = new ClientDao();
-        clientDao.insert(client);
+        TechnicienDao technicienDao = new TechnicienDao();
+        technicienDao.insert(technicien);
 
-        response.sendRedirect("/atelier/liste-client");
+        response.sendRedirect("/atelier/liste-technicien");
     }
 }

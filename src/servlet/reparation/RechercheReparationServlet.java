@@ -9,12 +9,12 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "ListReparation", urlPatterns = { "/liste-reparation" })
-public class ListReparationServlet extends HttpServlet {
+@WebServlet(name = "RechercheReparation", urlPatterns = { "/recherche-reparation" })
+public class RechercheReparationServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("pageName", "/pages/liste/reparation.jsp");
+        request.setAttribute("pageName", "/pages/recherche/reparation.jsp");
         request.getRequestDispatcher("/pages/accueil/accueil.jsp").forward(request, response);
     }
 }

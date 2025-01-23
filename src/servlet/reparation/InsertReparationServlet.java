@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "InsertClient", urlPatterns = { "/insertion-reparation" })
+@WebServlet(name = "InsertReparation", urlPatterns = { "/insertion-reparation" })
 public class InsertReparationServlet extends HttpServlet {
 
     @Override
@@ -34,6 +34,6 @@ public class InsertReparationServlet extends HttpServlet {
         ReparationDao reparationDao = new ReparationDao();
         reparationDao.insert(reparation);
 
-        response.sendRedirect("/atelier/liste-reparation");
+        response.sendRedirect("/atelier/recherche-reparation");
     }
 }

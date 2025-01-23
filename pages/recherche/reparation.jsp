@@ -1,6 +1,6 @@
 <%@ page import="java.util.List" %>
-<%@ page import="model.*" %>
-<%@ page import="dao.*" %>
+<%@ page import="model.Reparation" %>
+<%@ page import="dao.ReparationDao" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 
 <%

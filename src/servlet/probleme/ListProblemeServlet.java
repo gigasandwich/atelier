@@ -1,4 +1,4 @@
-package servlet.technicien;
+package servlet.probleme;
 import dao.*;
 import model.*;
 
@@ -9,14 +9,12 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "ListTechnicien", urlPatterns = { "/liste-technicien" })
-public class ListTechnicienServlet extends HttpServlet {
-
+@WebServlet(name = "ListProbleme", urlPatterns = { "/liste-probleme" })
+public class ListProblemeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // request.setAttribute("pageName", "/pages/liste/technicien.jsp");
-        request.setAttribute("pageName", "/pages/liste/technicien.jsp");
+        // request.setAttribute("pageName", "/pages/liste/probleme.jsp");
+        request.setAttribute("pageName", "/pages/liste/probleme.jsp");
         request.getRequestDispatcher("/pages/accueil/accueil.jsp").forward(request, response);
     }
-    
 }

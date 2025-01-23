@@ -4,8 +4,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 
 <%
-    ClientDao clientDao = new ClientDao();
-    List<Client> clients = clientDao.selectAll();
+    ProblemeDao problemeDao = new ProblemeDao();
+    List<Probleme> problemes = problemeDao.selectAll();
 %>
 
 <!-- Line Awesome section start -->
@@ -14,7 +14,7 @@
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title">Client List</h4>
+          <h4 class="card-title">Liste des probemes</h4>
           <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
           <div class="heading-elements">
             <ul class="list-inline mb-0">
@@ -30,24 +30,21 @@
             <table class="table table-bordered">
               <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>Name</th>
-                  <th>Contact</th>
-                  <th>Actions</th>
+                  <th>Description probleme</th>
+                  <th>Categorie probleme</th>
                 </tr>
               </thead>
               <tbody>
                 <%
-                  for (Client client : clients) {
+                  for (Probleme probleme : problemes) {
                 %>
                 <tr>
-                  <td><%= client.getIdClient() %></td>
-                  <td><%= client.getNomClient() %> <%= client.getPrenomClient() %></td>
-                  <td><%= client.getContact() %></td>
+                  <td><%= probleme.getDescriptionProbleme() %></td>
+                  <td><%= probleme.getCategorieProbleme() %></td>
                   <td>
                     <!-- Action buttons for editing or deleting -->
-                    <a href="edit.jsp?id=<%= client.getIdClient() %>">Edit</a> |
-                    <a href="delete.jsp?id=<%= client.getIdClient() %>">Delete</a>
+                    <a href="edit.jsp?id=<%= probleme.getIdProbleme() %>">Edit</a> |
+                    <a href="delete.jsp?id=<%= probleme.getIdProbleme() %>">Delete</a>
                   </td>
                 </tr>
                 <%
