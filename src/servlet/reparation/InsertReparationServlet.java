@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+@WebServlet(name = "InsertClient", urlPatterns = { "/insertion-reparation" })
 public class InsertReparationServlet extends HttpServlet {
 
     @Override

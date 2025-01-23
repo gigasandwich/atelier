@@ -7,7 +7,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-// @WebServlet(name = "Tongasoa", urlPatterns = { "/" })
+@WebServlet(name = "Tongasoa", urlPatterns = { "/" })
 public class Tongasoa extends HttpServlet {
 
     @Override

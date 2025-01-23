@@ -43,8 +43,8 @@ echo.
 @REM Copy necessary files
 echo Copying files...
 xcopy "%PROJECT_DIR%\pages" "%TEMP_DIR%\pages" /E /I /Y >nul
-xcopy "%PROJECT_DIR%\assets" "%TEMP_DIR%\assets" /E /I /Y >nul
-xcopy "%PROJECT_DIR%\conf" "%TEMP_DIR%\WEB-INF" /E /I /Y >nul
+@REM xcopy "%PROJECT_DIR%\assets" "%TEMP_DIR%\assets" /E /I /Y >nul
+@REM xcopy "%PROJECT_DIR%\conf" "%TEMP_DIR%\WEB-INF" /E /I /Y >nul
 xcopy "%PROJECT_DIR%\lib" "%TEMP_DIR%\WEB-INF\lib%" /E /I /Y >nul
 
 echo.
