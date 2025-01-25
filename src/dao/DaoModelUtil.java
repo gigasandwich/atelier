@@ -69,13 +69,17 @@ public class DaoModelUtil {
         }
     }
 
-    public static String convertSnakeToPascal(String snakeCase) {
+    public static String convertSnakeToCamel(String snakeCase) {
         StringBuilder result = new StringBuilder();
         String[] parts = snakeCase.split("_");
-        for (String part : parts) {
-            if (part.length() > 0) {
-                result.append(Character.toUpperCase(part.charAt(0)));
-                result.append(part.substring(1).toLowerCase());
+        for (int i = 0; i < parts.length; i++) {
+            if (parts[i].length() > 0) {
+                if (i == 0) {
+                    result.append(parts[i].toLowerCase());
+                } else {
+                    result.append(Character.toUpperCase(parts[i].charAt(0)));
+                    result.append(parts[i].substring(1).toLowerCase());
+                }
             }
         }
         return result.toString();

@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.lang.reflect.Field;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet(name = "GenericInsert", urlPatterns = { "/insertion/*" }) // /insertion-client,
 public class GenericInsertServlet extends HttpServlet {
@@ -43,7 +44,8 @@ public class GenericInsertServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         String pathInfo = request.getPathInfo(); // "/client"
         String modelName = pathInfo.substring(1); // client
         Class<?> modelClass = DaoModelUtil.getModelClass(modelName);
@@ -55,7 +57,7 @@ public class GenericInsertServlet extends HttpServlet {
 
         try {
             GenericDaoImpl<?> dao = DaoModelUtil.getDao(modelName);
-            String[] insertColumns = dao.getInsertColumnsArray(); 
+            String[] insertColumns = dao.getInsertColumnsArray();
 
             Object[] params = new Object[insertColumns.length];
             Field[] fields = modelClass.getDeclaredFields();
@@ -63,9 +65,9 @@ public class GenericInsertServlet extends HttpServlet {
             // Populate parameters based on the request
             for (int i = 0; i < insertColumns.length; i++) {
                 String columnName = insertColumns[i];
-                String value = request.getParameter(DaoModelUtil.convertSnakeToPascal(columnName)); 
+                String value = request.getParameter(DaoModelUtil.convertSnakeToCamel(columnName));
                 for (Field field : fields) {
-                    if (field.getName().equalsIgnoreCase(DaoModelUtil.convertSnakeToPascal(columnName))) {
+                    if (field.getName().equalsIgnoreCase(DaoModelUtil.convertSnakeToCamel(columnName))) {
                         field.setAccessible(true);
                         Class<?> fieldType = field.getType();
                         if (fieldType == int.class) {
