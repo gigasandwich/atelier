@@ -1,4 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%-- Table --%>
 <section id="line-awesome-icons">
   <div class="row">
     <div class="col-12">
@@ -24,3 +25,23 @@
     </div>
   </div>
 </section>
+
+<!-- Modal Structure -->
+<div id="editModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Edit Entity</h5>
+            <button type="button" class="close" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="editForm" onsubmit="return submitForm();">
+                <input type="hidden" name="id" id="entityId"/>
+                <div id="modalFields"></div> <!-- Dynamic fields -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Close</button>
+                    <input type="submit" class="btn btn-primary" value="Update"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

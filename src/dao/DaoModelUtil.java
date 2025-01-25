@@ -1,5 +1,6 @@
 package dao;
 
+import java.lang.reflect.Field;
 import model.*;
 
 public class DaoModelUtil {
@@ -84,4 +85,63 @@ public class DaoModelUtil {
         }
         return result.toString();
     }
-}
+
+    public static String convertEntityToJson(Object entity) {
+        StringBuilder jsonBuilder = new StringBuilder();
+        jsonBuilder.append("{");
+
+        Field[] fields = entity.getClass().getDeclaredFields();
+        for (int i = 0; i < fields.length; i++) {
+            Field field = fields[i];
+            field.setAccessible(true); 
+            try {
+                Object value = field.get(entity);
+                jsonBuilder.append("\"").append(field.getName()).append("\":");
+                if (value instanceof String) {
+                    jsonBuilder.append("\"").append(value).append("\"");
+                } else {
+                    jsonBuilder.append(value); 
+                }
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+            if (i < fields.length - 1) {
+                jsonBuilder.append(",");
+            }
+        }
+
+        jsonBuilder.append("}");
+        return jsonBuilder.toString();
+    }
+
+    public static String convertEntityToJson(Object entity, int id) {
+        StringBuilder jsonBuilder = new StringBuilder();
+        jsonBuilder.append("{");
+
+        jsonBuilder.append("\"id\":").append(id).append(",");
+
+        Field[] fields = entity.getClass().getDeclaredFields();
+        for (int i = 0; i < fields.length; i++) {
+            Field field = fields[i];
+            field.setAccessible(true);
+            try {
+                Object value = field.get(entity);
+                jsonBuilder.append("\"").append(field.getName()).append("\":");
+                if (value instanceof String) {
+                    jsonBuilder.append("\"").append(value).append("\"");
+                } else {
+                    jsonBuilder.append(value);
+                }
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+            if (i < fields.length - 1) {
+                jsonBuilder.append(",");
+            }
+        }
+
+        jsonBuilder.append("}");
+        return jsonBuilder.toString();
+    }
+
+}   

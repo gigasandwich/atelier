@@ -28,6 +28,91 @@
     <link rel="stylesheet" type="text/css" href="../../../assets/theme-assets/css/pages/dashboard-ecommerce.css">
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
+    <style>
+      <!-- Modal CSS -->
+        <style>
+          .modal {
+              display: none; 
+              position: fixed; 
+              z-index: 1050; 
+              left: 0;
+              top: 0;
+              width: 100%; 
+              height: 100%; 
+              overflow: auto; 
+              background-color: rgba(0, 0, 0, 0.5); 
+          }
+
+          .modal-content {
+              background-color: #fff;
+              margin: 10% auto; 
+              padding: 20px;
+              border: 1px solid #ccc;
+              border-radius: 5px; 
+              width: 50%; 
+              max-width: 600px; 
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+          }
+
+          .modal-header {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+          }
+
+          .modal-title {
+              margin: 0;
+              font-size: 1.5rem; 
+          }
+
+          .close {
+              background: none;
+              border: none;
+              font-size: 1.5rem;
+              cursor: pointer;
+          }
+
+          .modal-body {
+              padding: 10px 0; 
+          }
+
+          .modal-body label {
+              display: block; 
+              margin-bottom: 5px; 
+          }
+
+          .modal-body input[type="text"] {
+              margin-left: 10px; 
+              padding: 8px; 
+              width: calc(100% - 20px); 
+              border: 1px solid #ccc; 
+              border-radius: 4px; 
+          }
+
+          .modal-footer {
+              display: flex;
+              justify-content: flex-end; 
+          }
+
+          .btn {
+              padding: 10px 20px; 
+              border-radius: 5px; 
+          }
+
+          .btn-secondary {
+              background-color: #6c757d; 
+              color: white;
+          }
+
+          .btn-primary {
+              background-color: #007bff; 
+              color: white;
+          }
+
+          .btn:hover {
+              opacity: 0.9; 
+          }
+    </style>
     <!-- END Custom CSS-->
   </head>
   <body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar" data-open="click" data-menu="vertical-menu" data-color="bg-chartbg" data-col="2-columns">
@@ -290,5 +375,56 @@
     <!-- BEGIN PAGE LEVEL JS-->
     <script src="../../../assets/theme-assets/js/scripts/pages/dashboard-lite.js" type="text/javascript"></script>
     <!-- END PAGE LEVEL JS-->
+
+    <script>
+      function openModal(entity) {
+          // Populate the modal with the entity data
+          document.getElementById("entityId").value = entity.id;
+
+          // Clear previous fields
+          const modalFields = document.getElementById("modalFields");
+          modalFields.innerHTML = '';
+
+          // Dynamically create input fields based on the entity properties
+          for (const [key, value] of Object.entries(entity)) {
+              const label = document.createElement("label");
+              label.setAttribute("for", key);
+              label.textContent = key.charAt(0).toUpperCase() + key.slice(1) + ":"; // Capitalize first letter
+
+              const input = document.createElement("input");
+              input.type = "text";
+              input.id = key;
+              input.name = key;
+              input.value = value; // Set the current value
+
+              modalFields.appendChild(label);
+              modalFields.appendChild(input);
+              modalFields.appendChild(document.createElement("br")); // Line break
+          }
+
+          // Display the modal
+          document.getElementById("editModal").style.display = "block";
+      }
+
+      function closeModal() {
+          document.getElementById("editModal").style.display = "none";
+      }
+
+      function submitForm() {
+          const formData = new FormData(document.getElementById("editForm"));
+          const xhr = new XMLHttpRequest();
+          xhr.open("POST", "/atelier/edit", true); // Adjust the URL as needed
+          xhr.onload = function () {
+              if (xhr.status === 200) {
+                  // Reload the page or update the UI as needed
+                  window.location.reload(); // Reload the page to see the updated data
+              } else {
+                  alert("Error updating entity: " + xhr.responseText);
+              }
+          };
+          xhr.send(formData);
+          return false; // Prevent default form submission
+      }
+  </script>
   </body>
 </html>

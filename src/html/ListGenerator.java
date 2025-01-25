@@ -1,5 +1,6 @@
 package html;
 
+import dao.DaoModelUtil;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.List;
@@ -39,9 +40,13 @@ public class ListGenerator {
                         }
                     }
                 }
+                int id = (int) getEntityId(entity);
                 tableHtml.append("<td>\n")
-                        .append("<a href=\"/atelier/edit/").append(modelName).append("?id=").append(getEntityId(entity)).append("\">Edit</a> |\n")
-                        .append("<a href=\"/atelier/delete/").append(modelName).append("?id=").append(getEntityId(entity)).append("\" onclick=\"return confirm('Voulez vous supprimer?');\">Delete</a>\n")
+                        .append("<a href=\"#\" onclick='openModal(")
+                        .append(DaoModelUtil.convertEntityToJson(entity, id)).append(");'>Edit</a> |\n")
+                        .append("<a href=\"/atelier/delete/").append(modelName).append("?id=")
+                        .append(getEntityId(entity))
+                        .append("\" onclick=\"return confirm('Voulez vous supprimer?');\">Delete</a>\n")
                         .append("</td>\n</tr>\n");
             }
         }
@@ -53,7 +58,7 @@ public class ListGenerator {
     private static <T> Object getEntityId(T entity) {
         try {
             String entityName = entity.getClass().getSimpleName();
-            String idMethodName = "getId" + entityName; 
+            String idMethodName = "getId" + entityName;
 
             Method method = entity.getClass().getDeclaredMethod(idMethodName);
             return method.invoke(entity);
