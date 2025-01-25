@@ -24,7 +24,7 @@ public class GenericInsertServlet extends HttpServlet {
         String pathInfo = request.getPathInfo(); // "/client"
 
         if (pathInfo == null || pathInfo.length() <= 1) {
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid URL pattern.");
+            response.sendError(400, "Invalid URL pattern."); // Bad request
             return;
         }
 

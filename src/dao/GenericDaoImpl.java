@@ -97,6 +97,10 @@ public abstract class GenericDaoImpl<T> implements GenericDao<T> {
      */
     @Override
     public void update(T oldEntity, T newEntity) {
+        // Zavatra mitovy id no updatena sinon mamoka erreur
+        if(getIdFromEntity(oldEntity) != getIdFromEntity(newEntity))
+            return;
+
         String[] columns = getInsertColumnsArray();
         String setClause = String.join(" = ?, ", columns) + " = ?";
         String sql = "UPDATE " + TABLENAME + " SET " + setClause + " WHERE " + IDCOLUMN + " = ?";
@@ -104,6 +108,20 @@ public abstract class GenericDaoImpl<T> implements GenericDao<T> {
              PreparedStatement ps = conn.prepareStatement(sql)) {
             entityToPreparedStatement(newEntity, ps);
             ps.setInt(columns.length + 1, getIdFromEntity(oldEntity));
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void update(T entity) {
+        String[] columns = getInsertColumnsArray();
+        String setClause = String.join(" = ?, ", columns) + " = ?";
+        String sql = "UPDATE " + TABLENAME + " SET " + setClause + " WHERE " + IDCOLUMN + " = ?";
+        try (Connection conn = ConnectionPostgres.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            entityToPreparedStatement(entity, ps);
+            ps.setInt(columns.length + 1, getIdFromEntity(entity));
             ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

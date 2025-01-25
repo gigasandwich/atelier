@@ -36,10 +36,11 @@
         <div class="modal-body">
             <form id="editForm" onsubmit="return submitForm();">
                 <input type="hidden" name="id" id="entityId"/>
+                <input type="hidden" name="tableName" id="tableName"/>
                 <div id="modalFields"></div> <!-- Dynamic fields -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Close</button>
-                    <input type="submit" class="btn btn-primary" value="Update"/>
+                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Fermer</button>
+                    <input type="submit" class="btn btn-primary" value="Modifier"/>
                 </div>
             </form>
         </div>

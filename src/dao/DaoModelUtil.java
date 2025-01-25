@@ -1,6 +1,7 @@
 package dao;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import model.*;
 
 public class DaoModelUtil {
@@ -118,6 +119,8 @@ public class DaoModelUtil {
         StringBuilder jsonBuilder = new StringBuilder();
         jsonBuilder.append("{");
 
+        String tableName = entity.getClass().getSimpleName().toLowerCase();
+        jsonBuilder.append("\"tableName\":\"").append(tableName).append("\",");
         jsonBuilder.append("\"id\":").append(id).append(",");
 
         Field[] fields = entity.getClass().getDeclaredFields();
@@ -142,6 +145,22 @@ public class DaoModelUtil {
 
         jsonBuilder.append("}");
         return jsonBuilder.toString();
+    }
+
+    public static <T> Object getEntityId(T entity) {
+        try {
+            String entityName = entity.getClass().getSimpleName();
+            String idMethodName = "getId" + entityName;
+
+            Method method = entity.getClass().getDeclaredMethod(idMethodName);
+            return method.invoke(entity);
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+            return null;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
 }   
