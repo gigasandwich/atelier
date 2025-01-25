@@ -1,6 +1,5 @@
 package dao;
 
-import dao.*;
 import model.*;
 
 public class DaoModelUtil {
@@ -11,6 +10,26 @@ public class DaoModelUtil {
                 return Client.class;
             case "ordinateur":
                 return Ordinateur.class;
+            case "marque":
+                return Marque.class;
+            case "modele":
+                return Modele.class;
+            case "type_ordinateur":
+                return TypeOrdinateur.class;
+            case "processeur":
+                return Processeur.class;
+            case "ram":
+                return Ram.class;
+            case "stockage":
+                return Stockage.class;
+            case "probleme":
+                return Probleme.class;
+            case "technicien":
+                return Technicien.class;
+            case "carte_graphique":
+                return CarteGraphique.class;
+            case "reparation":
+                return Reparation.class;
             default:
                 return null;
         }
@@ -22,8 +41,43 @@ public class DaoModelUtil {
                 return new ClientDao();
             case "ordinateur":
                 return new OrdinateurDao();
+            case "marque":
+                return new MarqueDao();
+            case "modele":
+                return new ModeleDao();
+            case "type_ordinateur":
+                return new TypeOrdinateurDao();
+            case "processeur":
+                // return new ProcesseurDao();
+                return null;
+            case "ram":
+                // return new RamDao();
+                return null;
+            case "stockage":
+                // return new StockageDao();
+                return null;
+            case "probleme":
+                return new ProblemeDao();
+            case "technicien":
+                return new TechnicienDao();
+            case "carte_graphique":
+                return new CarteGraphiqueDao();
+            case "reparation":
+                return new ReparationDao();
             default:
                 return null;
         }
+    }
+
+    public static String convertSnakeToPascal(String snakeCase) {
+        StringBuilder result = new StringBuilder();
+        String[] parts = snakeCase.split("_");
+        for (String part : parts) {
+            if (part.length() > 0) {
+                result.append(Character.toUpperCase(part.charAt(0)));
+                result.append(part.substring(1).toLowerCase());
+            }
+        }
+        return result.toString();
     }
 }

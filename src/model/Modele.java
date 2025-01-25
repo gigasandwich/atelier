@@ -1,8 +1,13 @@
 package model;
 
 public class Modele {
+    @FieldInfo(label = "ID", type = "number", required = false)
     private int idModele;
+
+    @FieldInfo(label = "Nom du Modèle", type = "text")
     private String nomModele;
+
+    @FieldInfo(label = "ID de la Marque", type = "number")
     private int idMarque;
 
     public Modele(int idModele, String nomModele, int idMarque) {

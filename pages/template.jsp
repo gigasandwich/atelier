@@ -189,6 +189,9 @@
                     <a href="<%= contextPath %>/insertion/ordinateur" class="menu-item">Insertion</a>
                 </li>
                 <li>
+                    <a href="<%= contextPath %>/liste/ordinateur" class="menu-item">Liste</a>
+                </li>
+                <li>
                   <a href="recherche-ordinateur" class="menu-item">Recherche</a>
               </li>
             </ul>

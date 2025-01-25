@@ -71,6 +71,19 @@ public abstract class GenericDaoImpl<T> implements GenericDao<T> {
         }
     }
 
+    public void insert(Object... params) {
+        String sql = "INSERT INTO " + TABLENAME + " (" + getInsertColumns() + ") VALUES (" + getInsertPlaceholders() + ")";
+        try (Connection conn = ConnectionPostgres.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            for (int i = 0; i < params.length; i++) {
+                ps.setObject(i + 1, params[i]);
+            }
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     protected String getInsertColumns() {
         return String.join(", ", getInsertColumnsArray());
     }

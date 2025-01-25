@@ -3,13 +3,28 @@ package model;
 import java.sql.Date;
 
 public class Reparation {
+    @FieldInfo(label = "ID", type = "number", required = false)
     private int idReparation;
+
+    @FieldInfo(label = "Description de la Solution", type = "text")
     private String descriptionSolution;
+
+    @FieldInfo(label = "Date de Dépôt", type = "date")
     private Date dateDepot;
+
+    @FieldInfo(label = "Date de Retour", type = "date")
     private Date dateRetour;
+
+    @FieldInfo(label = "Coût de Réparation", type = "number")
     private float coutReparation;
+
+    @FieldInfo(label = "Statut de Réparation", type = "text")
     private String statutReparation;
+
+    @FieldInfo(label = "ID du Technicien", type = "number")
     private int idTechnicien;
+
+    @FieldInfo(label = "ID du Problème", type = "number")
     private int idProbleme;
 
     public Reparation(int idReparation, String descriptionSolution, Date dateDepot, Date dateRetour, float coutReparation, String statutReparation, int idTechnicien, int idProbleme) {

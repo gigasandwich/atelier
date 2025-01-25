@@ -1,5 +1,4 @@
 package model; 
-import generalized.*;
 
 public class Client {
     @FieldInfo(label = "ID", type = "number", required = false)

@@ -1,16 +1,31 @@
 package model;
 
 public class Ordinateur {
+    @FieldInfo(label = "ID", type = "number", required = false)
     private int idOrdinateur;
+
+    @FieldInfo(label = "Numéro de Série", type = "text")
     private String numeroSerie;
-    private Integer idCarteGraphique;
+
+    @FieldInfo(label = "ID de la Carte Graphique", type = "number", required = false)
+    private int idCarteGraphique;
+
+    @FieldInfo(label = "ID du Client", type = "number")
     private int idClient;
+
+    @FieldInfo(label = "ID de la RAM", type = "number")
     private int idRam;
+
+    @FieldInfo(label = "ID du Processeur", type = "number")
     private int idProcesseur;
+
+    @FieldInfo(label = "ID du Type d'Ordinateur", type = "number")
     private int idTypeOrdinateur;
+
+    @FieldInfo(label = "ID du Modèle", type = "number")
     private int idModele;
 
-    public Ordinateur(int idOrdinateur, String numeroSerie, Integer idCarteGraphique, int idClient, int idRam, int idProcesseur, int idTypeOrdinateur, int idModele) {
+    public Ordinateur(int idOrdinateur, String numeroSerie, int idCarteGraphique, int idClient, int idRam, int idProcesseur, int idTypeOrdinateur, int idModele) {
         this.idOrdinateur = idOrdinateur;
         this.numeroSerie = numeroSerie;
         this.idCarteGraphique = idCarteGraphique;

@@ -1,21 +1,21 @@
 package html;
 
-import generalized.FieldInfo;
 import java.lang.reflect.Field;
+import model.FieldInfo;
 
 public class FormGenerator {
     public static <T> String generateForm(Class<T> modelClass) {
         StringBuilder formHtml = new StringBuilder();
-        formHtml.append("<form action=\"/generic?action=insert&model=").append(modelClass.getSimpleName().toLowerCase()).append("\" method=\"POST\">\n");
+        formHtml.append("<form action=\"/atelier/insertion/").append(modelClass.getSimpleName().toLowerCase()).append("\" method=\"POST\">\n");
 
-        Field[] fields = modelClass.getDeclaredFields(); // Get fields instead of methods
+        Field[] fields = modelClass.getDeclaredFields();
 
         for (Field field : fields) {
             if (field.isAnnotationPresent(FieldInfo.class)) {
                 FieldInfo fieldInfo = field.getAnnotation(FieldInfo.class);
-                String fieldName = field.getName(); // Use the field name directly
+                String fieldName = field.getName();
 
-                // Check if the field is required
+                // Ny required ihany no apetraka eo @ form
                 if (fieldInfo.required()) {
                     formHtml.append("<div class=\"form-group\">\n")
                             .append("<label for=\"").append(fieldName).append("\">").append(fieldInfo.label()).append(":</label>\n");

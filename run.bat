@@ -31,4 +31,4 @@ if %errorlevel% neq 0 (
 echo.
 echo Compilation completed successfully!
 
-java -cp "%PROJECT_DIR%\lib\*;%PROJECT_DIR%\bin" aff.Main
+java -cp "%PROJECT_DIR%\lib\*;%PROJECT_DIR%\bin" test.TestGenericInsert

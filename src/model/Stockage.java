@@ -1,7 +1,10 @@
 package model;
 
 public class Stockage {
+    @FieldInfo(label = "ID", type = "number", required = false)
     private int idStockage;
+
+    @FieldInfo(label = "Type de Stockage", type = "text")
     private String typeStockage;
 
     public Stockage(int idStockage, String typeStockage) {

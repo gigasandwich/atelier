@@ -2,7 +2,10 @@ package model;
 
 // Model classes
 public class Marque {
+    @FieldInfo(label = "ID", type = "number", required = false)
     private int idMarque;
+
+    @FieldInfo(label = "Nom de la Marque", type = "text")
     private String nomMarque;
 
     public Marque(int idMarque, String nomMarque) {

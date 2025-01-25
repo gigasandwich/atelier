@@ -1,9 +1,9 @@
 package html;
 
-import generalized.FieldInfo;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.List;
+import model.FieldInfo;
 
 // Tsy tonga dia atao anaty methode le List fa any @ jsp ami'izay afaka anaovana filtre
 
@@ -49,8 +49,14 @@ public class ListGenerator {
 
     private static <T> Object getEntityId(T entity) {
         try {
-            Method method = entity.getClass().getDeclaredMethod("getIdClient");
+            String entityName = entity.getClass().getSimpleName();
+            String idMethodName = "getId" + entityName; 
+
+            Method method = entity.getClass().getDeclaredMethod(idMethodName);
             return method.invoke(entity);
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+            return null;
         } catch (Exception e) {
             e.printStackTrace();
             return null;
