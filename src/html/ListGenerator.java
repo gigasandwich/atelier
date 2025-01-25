@@ -9,11 +9,14 @@ import model.FieldInfo;
 
 public class ListGenerator {
     public static <T> String generateTable(List<T> entities) {
+
         StringBuilder tableHtml = new StringBuilder();
         tableHtml.append("<table class=\"table table-bordered\">\n")
                 .append("<thead>\n<tr>\n");
 
         if (!entities.isEmpty()) {
+            String modelName = entities.get(0).getClass().getSimpleName().toLowerCase();
+
             Field[] fields = entities.get(0).getClass().getDeclaredFields();
             for (Field field : fields) {
                 if (field.isAnnotationPresent(FieldInfo.class)) {
@@ -37,8 +40,8 @@ public class ListGenerator {
                     }
                 }
                 tableHtml.append("<td>\n")
-                        .append("<a href=\"edit.jsp?id=").append(getEntityId(entity)).append("\">Edit</a> |\n")
-                        .append("<a href=\"delete.jsp?id=").append(getEntityId(entity)).append("\">Delete</a>\n")
+                        .append("<a href=\"/atelier/edit/").append(modelName).append("?id=").append(getEntityId(entity)).append("\">Edit</a> |\n")
+                        .append("<a href=\"/atelier/delete/").append(modelName).append("?id=").append(getEntityId(entity)).append("\" onclick=\"return confirm('Voulez vous supprimer?');\">Delete</a>\n")
                         .append("</td>\n</tr>\n");
             }
         }
