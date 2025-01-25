@@ -25,7 +25,7 @@ public class ReparationDao extends GenericDaoImpl<Reparation> {
     }
 
     @Override
-    protected String[] getInsertColumnsArray() {
+    public String[] getInsertColumnsArray() {
         return new String[]{"description_solution", "date_depot", "date_retour", "cout_reparation", "statut_reparation", "id_technicien", "id_probleme"};
     }
 

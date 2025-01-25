@@ -22,7 +22,7 @@ public class ClientDao extends GenericDaoImpl<Client> {
     }
 
     @Override
-    protected String[] getInsertColumnsArray() {
+    public String[] getInsertColumnsArray() {
         return new String[]{"nom_client", "prenom_client", "contact"};
     }
 

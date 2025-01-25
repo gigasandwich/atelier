@@ -8,7 +8,7 @@ import java.util.List;
 public abstract class GenericDaoImpl<T> implements GenericDao<T> {
     protected abstract T resultSetToEntity(ResultSet rs) throws SQLException;
     protected abstract void entityToPreparedStatement(T entity, PreparedStatement ps) throws SQLException;
-    protected abstract String[] getInsertColumnsArray(); // eg: ["nom_client", "contact"]
+    public abstract String[] getInsertColumnsArray(); // eg: ["nom_client", "contact"], miasa ao @ FormGenerator.java dia atao public
     protected abstract int getIdFromEntity(T entity); // ampiasaina ao @ update (eg: client.getId())
 
     private final String TABLENAME;

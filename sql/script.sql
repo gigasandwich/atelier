@@ -6,20 +6,20 @@ GRANT ALL PRIVILEGES ON DATABASE atelier_reparation TO reparation;
 
 \c atelier_reparation;
 
-DROP TABLE IF EXISTS marque;
-DROP TABLE IF EXISTS modele;
-DROP TABLE IF EXISTS type_ordinateur;
-DROP TABLE IF EXISTS processeur;
-DROP TABLE IF EXISTS ram;
-DROP TABLE IF EXISTS stockage;
-DROP TABLE IF EXISTS client;
-DROP TABLE IF EXISTS probleme;
-DROP TABLE IF EXISTS technicien;
-DROP TABLE IF EXISTS carte_graphique;
-DROP TABLE IF EXISTS ordinateur;
-DROP TABLE IF EXISTS reparation;
-DROP TABLE IF EXISTS ordinateur_stockage;
 DROP TABLE IF EXISTS ordinateur_probleme;
+DROP TABLE IF EXISTS ordinateur_stockage;
+DROP TABLE IF EXISTS reparation;
+DROP TABLE IF EXISTS ordinateur;
+DROP TABLE IF EXISTS carte_graphique;
+DROP TABLE IF EXISTS probleme;
+DROP TABLE IF EXISTS client;
+DROP TABLE IF EXISTS stockage;
+DROP TABLE IF EXISTS ram;
+DROP TABLE IF EXISTS processeur;
+DROP TABLE IF EXISTS type_ordinateur;
+DROP TABLE IF EXISTS modele;
+DROP TABLE IF EXISTS technicien;
+DROP TABLE IF EXISTS marque;
 
 CREATE TABLE marque(
    id_marque SERIAL,

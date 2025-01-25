@@ -13,7 +13,7 @@ public class Tongasoa extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("pageName", "/pages/blank.jsp");
-        request.getRequestDispatcher("/pages/accueil/accueil.jsp").forward(request, response);
+        request.getRequestDispatcher("/pages/template.jsp").forward(request, response);
     }
 
 }

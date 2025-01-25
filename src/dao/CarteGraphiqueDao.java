@@ -1,7 +1,7 @@
 package dao;
 
-import model.CarteGraphique;
 import java.sql.*;
+import model.CarteGraphique;
 
 public class CarteGraphiqueDao extends GenericDaoImpl<CarteGraphique> {
     public CarteGraphiqueDao() {
@@ -19,7 +19,7 @@ public class CarteGraphiqueDao extends GenericDaoImpl<CarteGraphique> {
     }
 
     @Override
-    protected String[] getInsertColumnsArray() {
+    public String[] getInsertColumnsArray() {
         return new String[]{"nom_carte_graphique"};
     }
 

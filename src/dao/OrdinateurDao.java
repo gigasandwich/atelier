@@ -42,7 +42,7 @@ public class OrdinateurDao extends GenericDaoImpl<Ordinateur> {
     }
 
     @Override
-    protected String[] getInsertColumnsArray() {
+    public String[] getInsertColumnsArray() {
         return new String[]{"numero_serie", "id_client", "id_ram", "id_processeur", "id_type_ordinateur", "id_modele" /*, "stockage" */};
     }
 

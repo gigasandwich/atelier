@@ -20,7 +20,7 @@ public class ProblemeDao extends GenericDaoImpl<Probleme> {
     }
 
     @Override
-    protected String[] getInsertColumnsArray() {
+    public String[] getInsertColumnsArray() {
         return new String[]{"description_probleme", "categorie_probleme"};
     }
 

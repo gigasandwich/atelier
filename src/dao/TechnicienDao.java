@@ -20,7 +20,7 @@ public class TechnicienDao extends GenericDaoImpl<Technicien> {
     }
 
     @Override
-    protected String[] getInsertColumnsArray() {
+    public String[] getInsertColumnsArray() {
         return new String[]{"nom_technicien", "numero_employe"};
     }
 

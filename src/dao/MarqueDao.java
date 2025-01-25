@@ -19,7 +19,7 @@ public class MarqueDao extends GenericDaoImpl<Marque> {
     }
 
     @Override
-    protected String[] getInsertColumnsArray() {
+    public String[] getInsertColumnsArray() {
         return new String[]{"nom_marque"};
     }
 

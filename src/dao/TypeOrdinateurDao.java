@@ -19,7 +19,7 @@ public class TypeOrdinateurDao extends GenericDaoImpl<TypeOrdinateur> {
     }
 
     @Override
-    protected String[] getInsertColumnsArray() {
+    public String[] getInsertColumnsArray() {
         return new String[]{"nom_type_ordinateur"};
     }
 

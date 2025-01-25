@@ -24,7 +24,7 @@ public class ModeleDao extends GenericDaoImpl<Modele> {
     }
 
     @Override
-    protected String[] getInsertColumnsArray() {
+    public String[] getInsertColumnsArray() {
         return new String[]{"nom_modele", "id_marque"};
     }
 

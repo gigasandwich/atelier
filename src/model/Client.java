@@ -1,9 +1,17 @@
 package model; 
+import generalized.*;
 
 public class Client {
+    @FieldInfo(label = "ID", type = "number", required = false)
     private int idClient;
+
+    @FieldInfo(label = "Nom", type = "text")
     private String nomClient;
+
+    @FieldInfo(label = "Prenom", type = "text")
     private String prenomClient;
+
+    @FieldInfo(label = "Contact", type = "text")
     private String contact;
 
     public Client(int idClient, String nomClient, String prenomClient, String contact) {
